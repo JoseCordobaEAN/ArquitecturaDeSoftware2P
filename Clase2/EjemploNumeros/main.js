@@ -9,11 +9,17 @@ var sumatoria = function (n) {
     return n * (n + 1) / 2;
 };
 
+var sumatoriaRango = function(inferior, superior){
+    "use strict";
+    return sumatoria(superior) - sumatoria(inferior);
+}
+
 var boton = document.getElementById("btnCalcular");
 boton.onclick = function () {
     "use strict";
     let respuesta = document.getElementById("resultado");
-    let valor = document.getElementById("numero").value;
-    let resultado = sumatoria(parseInt(valor));
+    let valorInferior = document.getElementById("numeroInferior").value;
+    let valorSuperior = document.getElementById("numeroSuperior").value;
+    let resultado = sumatoriaRango(parseInt(valorInferior) -1 , parseInt(valorSuperior));
     respuesta.innerHTML = resultado;
 };
